@@ -17,11 +17,11 @@ const heroTranslations = {
   },
 };
 
-interface HeroProps {
+interface Language {
   language: 'en' | 'sv';
 }
 
-const Hero: React.FC<HeroProps> = ({ language }) => {
+const Hero: React.FC<{ language: Language }> = ({ language }) => {
   return (
     <section className="flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-center w-full" style={{ backgroundImage: "url('/assets/alone-surfer.jpg')" }}>
       <div className="text-left text-white p-4 max-w-[600px] mx-auto font-montserrat">
