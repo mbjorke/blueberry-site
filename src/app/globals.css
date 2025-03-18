@@ -1,0 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground: hsl(0, 0%, 100%);
+  --background-start: hsla(195, 80%, 10%, 1);
+  --background-end: hsla(195, 36%, 42%, 1);
+  --nav-background: hsla(197, 64%, 9%, 0.9);
+  --nav-background-button: hsl(195, 67%, 2%);
+}
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(
+    to bottom,
+    var(--background-start),
+    var(--background-end)
+  );
+  min-height: 100vh;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased; /* For WebKit browsers */
+  -moz-osx-font-smoothing: grayscale; /* For Firefox on macOS */
+}
+
+nav {
+  background: var(--nav-background);
+}
+
+h1 {
+  font-weight: 500;
+  line-height: 2;
+}
+
+h1, h2, h3, h4 , h5, h6 {
+  b {
+    font-weight: 900;
+  }
+}
+
+p {
+  font-weight: 400;
+}
+
+@layer components {
+  .hero-gradient {
+    background: linear-gradient(
+      to bottom,
+      hsla(180, 100%, 15%, 0.9),
+      hsla(180, 100%, 10%, 0.95)
+    );
+  }
+
+  .custom-button {
+    @apply inline-flex items-center gap-2 px-6 py-3 text-white bg-cyan-500 rounded-lg 
+           hover:bg-cyan-600 transition-colors duration-200;
+  }
+
+  .subtitle {
+    @apply text-sm tracking-widest text-cyan-400 uppercase;
+  }
+
+  .button {
+    background-color: transparent;
+    color: white; /* Text color */
+    border-radius: 9999px; /* Full pill shape */
+    padding: 0.5rem 1rem; /* Vertical and horizontal padding */
+    text-align: center; /* Center text */
+    transition: background-color 0.3s; /* Smooth transition for hover */
+  }
+
+  .button:hover {
+    background-color: var(--nav-background-button);
+  }
+}
