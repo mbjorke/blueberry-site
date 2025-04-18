@@ -95,86 +95,76 @@ const Plans = () => {
                   return <Icon className="w-10 h-10 text-white" aria-label={service.title + ' icon'} />;
                 })()}
               </div>
-              <div className="mt-14 flex flex-col items-center">
-                {/* Custom rendering for the first card (Landing Page) */}
-                {idx === 0 ? (
-                  <>
-                    {/* Badge */}
-                    <div className="mb-2 w-full flex justify-end">
-                      <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 drop-shadow-md">
-                        {service.badge}
-                      </span>
-                    </div>
-                    <h3 className="text-3xl font-extrabold mb-2 text-left w-full tracking-tight text-black drop-shadow-md">
-                      {service.displayTitle}
-                    </h3>
-                    <div className="text-gray-500 text-base w-full mb-2 text-left">{service.subtitle}</div>
-                    <div className="text-left w-full mb-4">
-                      <span className="inline-block px-2 py-1 rounded font-extrabold text-3xl tracking-tight text-black">
-                        {displayPrice}
-                      </span>
-                    </div>
-                    {/* Extra info */}
-                    <div className="w-full text-left text-black font-medium mb-2">{service.extra}</div>
-                    {/* Features (split into two columns for visual similarity) */}
-                    <div className="flex w-full gap-4 mb-4">
-                      <ul className="flex-1 space-y-3">
-                        {service.features.slice(0, Math.ceil(service.features.length / 2)).map((feature, i) => (
-                          <li key={i} className="flex items-start text-base text-gray-700">
-                            <CheckIcon className="w-5 h-5 mr-2 mt-1 flex-shrink-0 text-cyan-600" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                      <ul className="flex-1 space-y-3">
-                        {service.features.slice(Math.ceil(service.features.length / 2)).map((feature, i) => (
-                          <li key={i} className="flex items-start text-base text-gray-700">
-                            <CheckIcon className="w-5 h-5 mr-2 mt-1 flex-shrink-0 text-cyan-600" />
-                            <span>{feature}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    {/* Add-on toggle (interactive) */}
-                    {service.addOn && (
-                      <div className="w-full flex items-center bg-gray-100 rounded-xl px-4 py-3 mb-4">
-                        <div className="flex items-center mr-3">
-                          <span className="relative inline-block w-10 mr-2 align-middle select-none">
-                            <input
-                              type="checkbox"
-                              checked={starterAddon}
-                              onChange={() => setStarterAddon((v) => !v)}
-                              className="absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer"
-                              style={{ left: 0, top: 0 }}
-                            />
-                            <span className="block overflow-hidden h-6 rounded-full bg-gray-300"></span>
-                          </span>
-                        </div>
-                        <span className="text-base font-semibold text-gray-700">{service.addOn.label}: <span className="font-bold">{service.addOn.price}</span></span>
-                      </div>
-                    )}
-                  </>
-                ) : (
-                  <>
-                    <h3 className="text-2xl font-bold mb-2 text-center tracking-tight flex items-center justify-center gap-2 uppercase text-white drop-shadow-md">
-                      {service.title}
-                    </h3>
-                    <div className="text-center mb-6">
-                      <span className="inline-block px-5 py-2 rounded-full font-extrabold text-3xl shadow-lg tracking-tight bg-white/10 text-white border border-white/20">
-                        {service.price}
-                      </span>
-                    </div>
-                    <ul className="mb-8 space-y-3">
-                      {service.features.map((feature, i) => (
-                        <li key={i} className="flex items-start text-base text-white/90">
-                          <CheckIcon className="w-5 h-5 mr-2 mt-1 flex-shrink-0 text-white/80" />
-                          <span>{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </>
-                )}
-              </div>
+              <div className="mt-14 flex flex-col items-center h-full w-full">
+  {/* Custom rendering for the first card (Landing Page) */}
+  {idx === 0 ? (
+    <>
+      {/* Badge */}
+      <div className="mb-2 w-full flex justify-start">
+        <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 drop-shadow-md">
+          {service.badge}
+        </span>
+      </div>
+      <h3 className="text-3xl font-extrabold mb-2 text-left w-full tracking-tight text-white drop-shadow-md">
+        {service.displayTitle}
+      </h3>
+      <div className="text-gray-200 text-base w-full mb-2 text-left font-medium">{service.subtitle}</div>
+      <div className="text-left w-full mb-3">
+        <span className="inline-block px-2 py-1 rounded font-extrabold text-4xl tracking-tight text-white bg-black/20">
+          {displayPrice}
+        </span>
+      </div>
+      {/* Extra info */}
+      <div className="w-full text-left text-cyan-200 font-medium mb-3 underline cursor-pointer hover:text-cyan-300 transition">
+        {service.extra}
+      </div>
+      {/* Features (single column for clarity) */}
+      <ul className="w-full mb-4 space-y-3">
+        {service.features.map((feature, i) => (
+          <li key={i} className="flex items-start text-base text-cyan-100">
+            <CheckIcon className="w-5 h-5 mr-2 mt-1 flex-shrink-0 text-cyan-400" />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+      {/* Add-on toggle (interactive, styled) */}
+      {service.addOn && (
+        <div className="w-full flex items-center bg-white/10 rounded-xl px-4 py-3 mb-4 border border-cyan-700">
+          <label className="flex items-center cursor-pointer w-full">
+            <input
+              type="checkbox"
+              checked={starterAddon}
+              onChange={() => setStarterAddon((v) => !v)}
+              className="form-checkbox h-5 w-5 text-cyan-600 transition-all duration-150 mr-3 rounded-full border-2 border-cyan-400 focus:ring-cyan-500"
+            />
+            <span className="text-base font-semibold text-white">
+              {service.addOn.label}: <span className="font-bold">{service.addOn.price}</span>
+            </span>
+          </label>
+        </div>
+      )}
+    </>
+  ) : (
+    <>
+      <h3 className="text-2xl font-extrabold mb-2 text-center tracking-tight uppercase text-white drop-shadow-md">
+        {service.title}
+      </h3>
+      <div className="text-center mb-6">
+        <span className="inline-block px-6 py-2 rounded-full font-extrabold text-3xl shadow-lg tracking-tight bg-white/20 text-white border border-white/30">
+          {service.price}
+        </span>
+      </div>
+      <ul className="mb-8 space-y-3 w-full">
+        {service.features.map((feature, i) => (
+          <li key={i} className="flex items-start text-base text-cyan-100">
+            <CheckIcon className="w-5 h-5 mr-2 mt-1 flex-shrink-0 text-cyan-400" />
+            <span>{feature}</span>
+          </li>
+        ))}
+      </ul>
+    </>
+  )}
+</div>
               <a
                 href={service.cta.url}
                 className="mt-4 w-full inline-block px-6 py-3 rounded-xl font-semibold text-center transition-colors duration-200 text-lg shadow-lg border-2 bg-white/10 text-white border-white/20 hover:bg-white/20 hover:text-blue-200"
