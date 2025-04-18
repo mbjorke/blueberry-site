@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
+import Plans from '../components/Plans';
 
 type Language = 'en' | 'sv';
 
@@ -13,7 +14,7 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between">
       <Navbar language={language} setLanguage={setLanguage} />
       <Hero language={language} />
-      {/* Other components */}
+      <Plans />
     </main>
   );
 }

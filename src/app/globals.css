@@ -18,11 +18,7 @@
 
 body {
   color: var(--foreground);
-  background: linear-gradient(
-    to bottom,
-    var(--background-start),
-    var(--background-end)
-  );
+  background: conic-gradient(from 0deg at 50% 12%, #08364d 0deg, rgb(1, 37, 51) 0deg, rgb(6, 22, 28) 0deg, rgb(5, 35, 45) 86.4deg, rgba(6, 22, 28, 1) 356.4deg);
   min-height: 100vh;
   font-weight: 400;
   -webkit-font-smoothing: antialiased; /* For WebKit browsers */
