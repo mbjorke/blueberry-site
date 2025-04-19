@@ -30,7 +30,9 @@ const services = [
     highlight: false
   },
   {
-    title: "Professional",
+    title: "Partnership",
+    badge: "Limited availability",
+    subtitle: "Perfect for partners requiring continuous design support, multiple projects, or flexible scope",
     price: "€2499/month",
     features: [
       "Ongoing web/product development partnership",
@@ -146,10 +148,21 @@ const Plans = () => {
     </>
   ) : (
     <>
-      <h3 className="text-2xl font-extrabold mb-2 text-center tracking-tight uppercase text-white drop-shadow-md">
+      {/* Badge for Partnership */}
+      {service.badge && (
+        <div className="mb-2 w-full flex justify-start">
+          <span className="inline-block px-3 py-1 rounded-full text-xs font-semibold bg-blue-100 text-blue-800 drop-shadow-md">
+            {service.badge}
+          </span>
+        </div>
+      )}
+      <h3 className="text-2xl font-extrabold mb-2 text-left w-full tracking-tight text-white drop-shadow-md">
         {service.title}
       </h3>
-      <div className="text-center mb-6">
+      {service.subtitle && (
+        <div className="text-gray-200 text-base w-full mb-2 text-left font-medium">{service.subtitle}</div>
+      )}
+      <div className="text-left w-full mb-3">
         <span className="inline-block px-6 py-2 rounded-full font-extrabold text-3xl shadow-lg tracking-tight bg-white/20 text-white border border-white/30">
           {service.price}
         </span>
