@@ -10,9 +10,12 @@ const AboutCard: React.FC = () => {
 
   return (
     <div
-      className={`transition-transform duration-300 ease-in-out ${expanded ? 'scale-105 rotate-1 shadow-2xl' : 'hover:scale-105 hover:-rotate-2'} bg-gradient-to-br from-cyan-900/80 to-cyan-800/70 rounded-3xl p-4 flex flex-col items-center cursor-pointer select-none max-w-xs`}
-      tabIndex={0}
-      aria-expanded={expanded}
+    className={`transition-transform duration-300 ease-in-out ${
+      expanded
+        ? 'scale-105 rotate-1 shadow-2xl'
+        : 'hover:scale-105 hover:-rotate-2'
+    } bg-gradient-to-br from-cyan-900/40 to-cyan-800/30 rounded-3xl p-4 flex flex-col items-center cursor-pointer select-none max-w-xs`}
+    tabIndex={0}      aria-expanded={expanded}
       onClick={() => setExpanded(!expanded)}
       onKeyDown={e => (e.key === 'Enter' || e.key === ' ') && setExpanded(!expanded)}
       style={{ minWidth: 150, minHeight: 150 }}
@@ -22,7 +25,7 @@ const AboutCard: React.FC = () => {
       <Image
         src={personalInfo.avatar}
         alt="Avatar"
-        width={64}
+        width={250}
         height={64}
         className="rounded-full mb-2 drop-shadow-lg"
         priority
