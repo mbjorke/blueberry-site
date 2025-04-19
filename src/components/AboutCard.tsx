@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
-const avatar = 'https://framerusercontent.com/images/rKcjcAcalcbBCuCwY69CzNqoyNk.png?scale-down-to=512';
-
+import { personalInfo } from '../config/personalInfo';
 /**
  * AboutCard: Visually a small card (150px) that expands on click, but semantically About section is first in DOM.
  * Interactive tilt effect, no border, matches site aesthetic, accessible.
@@ -21,7 +20,7 @@ const AboutCard: React.FC = () => {
       aria-label="About me card"
     >
       <Image
-        src={avatar}
+        src={personalInfo.avatar}
         alt="Avatar"
         width={64}
         height={64}
@@ -29,8 +28,8 @@ const AboutCard: React.FC = () => {
         priority
       />
       <div className="text-center">
-        <h3 className="text-lg font-bold mb-1">Your Name</h3>
-        <p className="text-xs text-cyan-200">Developer & Designer</p>
+      <h3 className="text-lg font-bold mb-1">{personalInfo.name}</h3>
+      <p className="text-xs text-cyan-200">{personalInfo.title}</p>
         {expanded && (
           <p className="mt-2 text-sm text-cyan-100">
             Passionate about building beautiful, accessible, and performant web experiences. Always learning, always shipping.
