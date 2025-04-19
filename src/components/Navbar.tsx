@@ -34,7 +34,7 @@ const translations: Translations = {
 
 const Navbar: React.FC<{ language: Language; setLanguage: (lang: Language) => void }> = ({ language, setLanguage }) => {
   return (
-    <nav className="sticky top-0 w-full bg-[var(--nav-background)]">
+    <nav className="sticky top-0 w-full bg-[var(--nav-background)/70] backdrop-blur-md shadow-lg z-50">
       <div className="max-w-[1400px] mx-auto flex items-center p-4">
         <img src="/blueberry-logo.svg" alt="Blueberry Logo" className="h-8" />
         <div className="flex-grow flex justify-center">

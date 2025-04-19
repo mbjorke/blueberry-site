@@ -63,7 +63,7 @@ const Plans = (): JSX.Element => {
   // Toggle state for the add-on in the Starter card
   const [starterAddon, setStarterAddon] = useState(false);
   return (
-    <section id="pricing" className="py-24 max-w-[1400px] mx-auto px-4 rounded-3xl bg-transparent scroll-mt-24">
+    <section id="pricing" className="py-28 max-w-[1400px] mx-auto px-4 rounded-3xl bg-gradient-to-br from-cyan-900/70 via-blue-900/60 to-cyan-800/90 scroll-mt-24 shadow-2xl">
   <div className="mb-16">
     <h2 className="text-4xl font-extrabold mb-4 text-center tracking-tight text-neutral-50 group-hover:filter group-hover:brightness-130 drop-shadow-lg">Pricing</h2>
     <h3 className="text-2xl font-bold mb-6 text-center text-white/90 group-hover:filter group-hover:brightness-130">Scale for teams of all sizes</h3>
@@ -77,7 +77,7 @@ const Plans = (): JSX.Element => {
     </p>
   </div>
 
-      <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+      <div className="grid md:grid-cols-3 gap-10 lg:gap-16">
         {services.map((service, idx) => {
           let displayPrice = service.price;
           return (

@@ -8,8 +8,10 @@ type HeroProps = {
 
 const Hero: React.FC<HeroProps> = ({ language }) => {
   return (
-    <section className="flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-center w-full" style={{ backgroundImage: "url('/assets/alone-surfer.jpg')" }}>
-      <div className="text-left text-white p-4 max-w-[600px] mx-auto font-montserrat">
+    <section className="relative flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-center w-full" style={{ backgroundImage: "url('/assets/alone-surfer.jpg')" }}>
+  <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-black/80 z-0"></div>
+      <div className="relative z-10 text-left text-white p-8 max-w-[700px] mx-auto font-montserrat flex flex-col items-center">
+
         <h6 className="mt-4 text-[12px] font-semibold uppercase tracking-widest">Building digital products since 1997</h6>
         <h1 className="mt-4 text-5xl">
           Where <span className="font-extrabold text-white">development</span> meets <span className="font-extrabold text-white">design</span>
