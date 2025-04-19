@@ -59,11 +59,11 @@ const services = [
   }
 ];
 
-const Plans = () => {
+const Plans = (): JSX.Element => {
   // Toggle state for the add-on in the Starter card
   const [starterAddon, setStarterAddon] = useState(false);
   return (
-    <section className="py-24 max-w-[1400px] mx-auto px-4 rounded-3xl bg-transparent">
+    <section id="pricing" className="py-24 max-w-[1400px] mx-auto px-4 rounded-3xl bg-transparent scroll-mt-24">
   <div className="mb-16">
     <h2 className="text-4xl font-extrabold mb-4 text-center tracking-tight text-neutral-50 group-hover:filter group-hover:brightness-130 drop-shadow-lg">Pricing</h2>
     <h3 className="text-2xl font-bold mb-6 text-center text-white/90 group-hover:filter group-hover:brightness-130">Scale for teams of all sizes</h3>
@@ -76,16 +76,7 @@ const Plans = () => {
       </span>
     </p>
   </div>
-      <h2 className="text-4xl font-extrabold mb-2 text-center tracking-tight text-neutral-50 group-hover:filter group-hover:brightness-130 drop-shadow-lg">Pricing</h2>
-      <h3 className="text-2xl font-bold mb-4 text-center text-white/90 group-hover:filter group-hover:brightness-130">Scale for teams of all sizes</h3>
-      <p className="text-lg text-center text-white/90 group-hover:filter group-hover:brightness-130 max-w-2xl mx-auto mb-10">
-        Flexible plans designed to accommodate companies of any size, making it easy for anyone to start improving their user experiences.<br />
-        <span className="block mt-2 font-medium">What is a credit? Each credit = 1 deep focus hour, dedicated to your project in either Framer or Windsurf.</span>
-        <span className="block mt-4 text-white/90 group-hover:filter group-hover:brightness-130">
-          <strong>Framer:</strong> Full control over content & layout, hosting included via your own creditcard, simple sites are free, Plus customers usually want their own domain name and hence pay from 5 € per month and upwards. Framer pricing: https://www.framer.com/pricing/<br />
-          <strong>Windsurf:</strong> Advanced interactivity, code delivery, separate hosting (great for enterprise or custom needs).
-        </span>
-      </p>
+
       <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
         {services.map((service, idx) => {
           let displayPrice = service.price;

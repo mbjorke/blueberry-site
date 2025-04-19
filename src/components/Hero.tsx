@@ -10,11 +10,11 @@ const Hero: React.FC<HeroProps> = ({ language }) => {
   return (
     <section className="flex items-center justify-center min-h-screen bg-cover bg-no-repeat bg-center w-full" style={{ backgroundImage: "url('/assets/alone-surfer.jpg')" }}>
       <div className="text-left text-white p-4 max-w-[600px] mx-auto font-montserrat">
-        <h6 className="mt-4 text-[12px] font-normal uppercase tracking-widest">Building digital products since 1997</h6>
+        <h6 className="mt-4 text-[12px] font-semibold uppercase tracking-widest">Building digital products since 1997</h6>
         <h1 className="mt-4 text-5xl">
           Where <span className="font-extrabold text-white">development</span> meets <span className="font-extrabold text-white">design</span>
         </h1>
-        <p className="mt-4 font-light">I design with a kaizen mindset. 'Kai' means 'change' and 'zen' means 'for the better'. Nothing is impossible with the right tools and the right approach.</p>
+        <p className="mt-4 font-light">Blueberry applies a focused kaizen mindset into everything we make. 'Kai' means 'change' and 'zen' means 'for the better'.</p>
         <p className="mt-4 font-light">Let’s improve your UX solutions together.</p>
         <div className="mt-4">
           <button className="flex items-center justify-center px-6 py-3 bg-[#cffafe] rounded-full hover:bg-cyan-200 transition duration-200">

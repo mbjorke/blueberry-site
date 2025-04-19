@@ -17,6 +17,7 @@ const translations: Translations = {
     home: 'Home',
     about: 'About',
     services: 'Services',
+    pricing: 'Pricing',
     contact: 'Contact',
     projects: 'Projects',
   },
@@ -24,6 +25,7 @@ const translations: Translations = {
     home: 'Hem',
     about: 'Om',
     services: 'Tjänster',
+    pricing: 'Prissättning',
     contact: 'Kontakt',
     projects: 'Projekt',
   },
@@ -39,6 +41,7 @@ const Navbar: React.FC<{ language: Language; setLanguage: (lang: Language) => vo
             <li><a href="#home" className="button">{translations[language].home}</a></li>
             <li><a href="#about" className="button">{translations[language].about}</a></li>
             <li><a href="#services" className="button">{translations[language].services}</a></li>
+            <li><a href="#pricing" className="button">{translations[language].pricing}</a></li>
             <li><a href="#contact" className="button">{translations[language].contact}</a></li>
             <li><a href="#projects" className="button">{translations[language].projects}</a></li>
           </ul>
